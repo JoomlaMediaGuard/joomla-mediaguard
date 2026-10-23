@@ -22,6 +22,7 @@ Engineered strictly around the **PSR-4** object-oriented architecture and hardwa
 
 To ensure smooth installation, your final `mediaguard.zip` archive must contain the following structural ecosystem files directly at its root level (no wrapping folders):
 
+```text
 mediaguard.zip
 ├── language/
 │   ├── en-GB/
