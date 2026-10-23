@@ -39,6 +39,7 @@ mediaguard.zip
 │       └── Mediaguard.php                   - Core backend plugin filter and REST API logic
 └── mediaguard.xml                           - Installation extension manifest (J5/J6 Standard)
 
+```
 ---
 
 ## 🛠️ Installation & Configuration
