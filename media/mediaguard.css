@@ -1,0 +1,187 @@
+/* SECTION A: PROTECTED ZONE */
+/* 1. Top toolbar, alert, and dropzone lock */
+.mediaguard-locked-zone button[onclick*="onClickUpload"],
+.mediaguard-locked-zone button[onclick*="onClickCreateFolder"],
+.mediaguard-locked-zone button[onclick*="onClickDelete"],
+.mediaguard-locked-zone button[onclick*="onClickRename"],
+.mediaguard-locked-zone #toolbar joomla-toolbar-button:nth-child(1),
+.mediaguard-locked-zone #toolbar joomla-toolbar-button:nth-child(2),
+.mediaguard-locked-zone joomla-media-toolbar joomla-toolbar-button:nth-child(1),
+.mediaguard-locked-zone joomla-media-toolbar joomla-toolbar-button:nth-child(2),
+.mediaguard-locked-zone .media-toolbar joomla-toolbar-button:nth-child(1),
+.mediaguard-locked-zone .media-toolbar joomla-toolbar-button:nth-child(2),
+.mediaguard-locked-zone #toolbar-upload,
+.mediaguard-locked-zone #toolbar-create-folder,
+.mediaguard-locked-zone #mediaDelete,
+.mediaguard-locked-zone .media-browser .text-center[style*="grid"],
+.mediaguard-locked-zone .media-dragoutline,
+.mediaguard-locked-zone .media-browser-dropzone,
+.mediaguard-locked-zone .media-browser-dropzone-message,
+.mediaguard-locked-zone .dropzone-overlay {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+.mediaguard-locked-zone #toolbar {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	width: 100% !important;
+	gap: 0.75rem !important;
+}
+
+.mediaguard-locked-zone #toolbar::after {
+	content: var(--mediaguard-alert, "Access denied") !important;
+	display: block !important;
+	order: -1 !important;
+	flex-grow: 0 !important;
+	flex-shrink: 1 !important;
+	width: auto !important; max-width: 50% !important;
+	padding: 8px 12px !important;
+	margin: 5px 0px !important;
+	background-color: rgb(248, 215, 218) !important;
+	color: rgb(114, 28, 36) !important;
+	border: 1px solid rgb(245, 198, 203) !important;
+	border-radius: 4px !important; font-family: sans-serif !important;
+	font-size: 13px !important;
+	font-weight: bold !important;
+	text-align: left !important;
+	box-sizing: border-box !important;
+	box-shadow: var(--mediaguard-shadow, none) !important;
+}
+
+.mediaguard-locked-zone .subhead joomla-toolbar-button,
+.mediaguard-locked-zone .subhead .btn-group,
+.mediaguard-locked-zone #toolbar joomla-toolbar-button {
+	margin-inline-start: 0px !important;
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.mediaguard-locked-zone #toolbar joomla-toolbar-button.ms-auto,
+.mediaguard-locked-zone #toolbar-help {
+	margin-left: auto !important;
+}
+
+.mediaguard-locked-zone #toolbar joomla-toolbar-button.ms-auto ~ #toolbar-help {
+	margin-left: 0px !important;
+}
+
+/* 2. Bulk injection of padlocks (🔒) into file and folder names within the protected zone */
+table.mediaguard-locked-zone tr.media-browser-item th[scope="row"].name::before,
+table.mediaguard-locked-zone tr.media-browser-item th.name::before,
+table.mediaguard-locked-zone tr.media-browser-item td.name::before,
+.mediaguard-locked-zone tr.media-browser-item th[scope="row"].name::before,
+.mediaguard-locked-zone tr.media-browser-item th.name::before,
+.mediaguard-locked-zone tr.media-browser-item td.name::before,
+.mediaguard-locked-zone .media-browser-item-info::before,
+.mediaguard-locked-zone .media-grid-item__title::before,
+table.mediaguard-locked-zone .media-grid-item__title::before {
+	content: "🔒 " !important;
+	font-size: 14px !important;
+	margin-right: 4px !important;
+	display: inline-block !important;
+}
+
+/* 3. Bulk removal of blocked (...) menu options as part of the protection mechanism */
+.mediaguard-locked-zone .media-browser-actions-list button.action-rename,
+.mediaguard-locked-zone .media-browser-actions-list button.action-edit,
+.mediaguard-locked-zone .media-browser-actions-list button.action-delete {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+/* 4. Bulk hiding of checkboxes for folders in grid view */
+.mediaguard-locked-zone .media-browser-item-directory .media-browser-select,
+.mediaguard-locked-zone .media-browser-item-directory joomla-media-select {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+/* SECTION B: FREE ZONE */
+/* 1a. Icons injection (🔒) */
+.mediaguard-locked-directory th.name::before,
+.mediaguard-locked-directory .name::before,
+.mediaguard-locked-directory .media-browser-item-info::before,
+th.mediaguard-locked-directory::before,
+.name.mediaguard-locked-directory::before {
+	content: "🔒 " !important;
+	font-size: 14px !important;
+	margin-right: 4px !important;
+	display: inline-block !important;
+}
+
+/* 1b. Icons injection (🛡️) */
+.mediaguard-parent-directory th.name::before,
+.mediaguard-parent-directory .name::before,
+.mediaguard-parent-directory .media-browser-item-info::before,
+th.mediaguard-parent-directory::before,
+.name.mediaguard-parent-directory::before {
+	content: "🛡️ " !important;
+	font-size: 14px !important;
+	margin-right: 4px !important;
+	display: inline-block !important;
+}
+
+
+/* 2. Bulk removal of menu options (...) for both classes */
+/* We only hide destructive actions for the parent folder itself: Delete and Rename. */
+.mediaguard-locked-directory .media-browser-actions-list button.action-rename,
+.mediaguard-locked-directory .media-browser-actions-list button.action-delete,
+.mediaguard-parent-directory .media-browser-actions-list button.action-rename,
+.mediaguard-parent-directory .media-browser-actions-list button.action-delete {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+/* 3. Bulk hiding of checkboxes for both classes (grid view) – for folders only */
+/* All files (images, documents) will retain their checkboxes, allowing editors to insert them into article content. */
+.mediaguard-locked-directory .media-browser-select,
+.mediaguard-locked-directory joomla-media-select,
+.mediaguard-parent-directory .media-browser-select,
+.mediaguard-parent-directory joomla-media-select {
+	display: none !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+/* SECTION C: DEBUGGER */
+/*
+State 1: Default (for popups / modals / iframes within the article editor)
+The debugger is fixed to the bottom of the window.
+This ensures that, within a modal window, it stays aligned with the bottom bar, remains immediately visible, and does not create any extra margins.
+*/
+#mediaguard-advanced-debugger {
+	position: fixed !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	width: 100% !important;
+	margin: 0 !important;
+	z-index: 1050 !important;
+}
+
+/*
+State 2: for the administrative backend only (Atum template)
+If the page loads in a full component view (where the <body> element has the default .com_media class) and the structure is not a Joomla modal window,
+the bar is positioned below the last row of tiles, with a safe margin of 30px.
+*/
+body.com_media:not(.view-images):not(.modal-body) #mediaguard-advanced-debugger {
+	position: relative !important;
+	bottom: auto !important;
+	left: auto !important;
+	right: auto !important;
+	margin-top: 30px !important;
+	margin-bottom: 20px !important;
+	clear: both !important;
+	display: block !important;
+}
