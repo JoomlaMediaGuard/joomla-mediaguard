@@ -1,4 +1,4 @@
-# 🛡️ MediaGuard v6.0.0 for Joomla 5 / 6
+# 🛡️ MediaGuard v1.0.0 for Joomla 5 / 6
 
 **MediaGuard** is an advanced, powerful, and ultra-lightweight system plugin designed to provide absolute, uncompromising protection for directory structures and assets within Joomla's native **Media Manager (com_media)**. 
 
@@ -73,5 +73,5 @@ If cache locks occur on highly restrictive production hosting environments, or a
 
 ## 📝 License & Copyright
 * **Authors:** Marek Gajdziński & AI Developer Team
-* **Version:** 6.0.0 (Production / Enterprise Ready)
+* **Version:** 1.0.0 (Production / Enterprise Ready)
 * **License:** GNU General Public License v2 or later.
