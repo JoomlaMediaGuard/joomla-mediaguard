@@ -23,21 +23,26 @@ Engineered strictly around the **PSR-4** object-oriented architecture and hardwa
 To ensure smooth installation, your final `mediaguard.zip` archive must contain the following structural ecosystem files directly at its root level (no wrapping folders):
 
 ```text
+
 mediaguard.zip
 ├── language/
 │   ├── en-GB/
-│   │   └── en-GB.plg_system_mediaguard.ini  - Official English (UK) translations (UTF-8 no BOM)
+│   │   ├── en-GB.plg_system_mediaguard.ini      - Official English (UK) configuration translations
+│   │   └── en-GB.plg_system_mediaguard.sys.ini  - Official English (UK) system/installer translations
 │   └── pl-PL/
-│       └── pl-PL.plg_system_mediaguard.ini  - Official Polish translations (UTF-8 no BOM)
+│       ├── pl-PL.plg_system_mediaguard.ini      - Official Polish configuration translations
+│       └── pl-PL.plg_system_mediaguard.sys.ini  - Official Polish system/installer translations
 ├── media/
-│   ├── mediaguard.css                       - Standardized CSS cascading ruleset
-│   └── mediaguard.js                        - Asynchronous front-end manager (MutationObserver)
+│   ├── mediaguard.css                           - Standardized CSS cascading ruleset
+│   └── mediaguard.js                            - Asynchronous front-end manager (MutationObserver)
 ├── services/
-│   └── provider.php                         - Modern Dependency Injection Service Provider
+│   └── provider.php                             - Modern Dependency Injection Service Provider
 ├── src/
 │   └── Extension/
-│       └── Mediaguard.php                   - Core backend plugin filter and REST API logic
-└── mediaguard.xml                           - Installation extension manifest (J5/J6 Standard)
+│       └── Mediaguard.php                       - Core backend plugin filter and REST API logic
+├── mediaguard.php                               - Root plugin bootstrap entry file
+└── mediaguard.xml                               - Installation extension manifest (J5/J6 Standard)
+
 
 ```
 ---
