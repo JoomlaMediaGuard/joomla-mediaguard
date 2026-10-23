@@ -1,0 +1,36 @@
+name: MediaGuard CI Protection
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Pobranie kodu z repozytorium na maszynę testową
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    # 2. Konfiguracja środowiska PHP
+    - name: Setup PHP Environment
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: json, mbstring
+
+    # 3. Test poprawności składni PHP (Linting)
+    - name: Check PHP Syntax Validity
+      run: |
+        find src/ services/ -name "*.php" -type f -print0 | xargs -0 -n1 php -l
+
+    # 4. Test integralności plików (Failsafe Verification)
+    # Sprawdza czy pliki js i css są na swoim miejscu w folderze media/
+    - name: Verify Frontend Assets Integrity
+      run: |
+        if [ ! -f media/mediaguard.js ]; then echo "CRITICAL ERROR: media/mediaguard.js is missing!"; exit 1; fi
+        if [ ! -f media/mediaguard.css ]; then echo "CRITICAL ERROR: media/mediaguard.css is missing!"; exit 1; fi
+        echo "Integrity verification successful: Core assets are present."
