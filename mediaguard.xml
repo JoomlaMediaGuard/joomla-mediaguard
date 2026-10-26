@@ -2,10 +2,10 @@
 <extension type="plugin" group="system" version="4.0" method="upgrade" element="mediaguard">
 	<name>PLG_SYSTEM_MEDIAGUARD</name>
 	<author>Marek Gajdziński, Gemini AI</author>
-	<creationDate>24-10-2026</creationDate>
+	<creationDate>26-10-2026</creationDate>
 	<copyright>(C) 2026 Marek Gajdziński</copyright>
 	<license>GNU General Public License version 2 or later</license>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<description>PLG_SYSTEM_MEDIAGUARD_XML_DESCRIPTION</description>
 
 	<namespace path="src" exttype="plugin">Joomla\Plugin\System\Mediaguard</namespace>
@@ -21,7 +21,7 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="protected_folders" type="textarea" label="PLG_SYSTEM_MEDIAGUARD_FIELD_FOLDERS_LABEL" description="PLG_SYSTEM_MEDIAGUARD_FIELD_FOLDERS_DESC" rows="6" cols="40" required="true"/>
+				<field name="protected_folders" type="textarea" label="PLG_SYSTEM_MEDIAGUARD_FIELD_FOLDERS_LABEL" description="PLG_SYSTEM_MEDIAGUARD_FIELD_FOLDERS_DESC" default="images/layout" rows="6" cols="40" required="true"/>
 				<field name="alert_text" type="text" label="PLG_SYSTEM_MEDIAGUARD_FIELD_ALERT_LABEL" description="PLG_SYSTEM_MEDIAGUARD_FIELD_ALERT_DESC" hint="PLG_SYSTEM_MEDIAGUARD_ALERT_PROTECTED" size="40"/>
 				<field name="allowed_groups" type="text" label="PLG_SYSTEM_MEDIAGUARD_FIELD_GROUPS_LABEL" description="PLG_SYSTEM_MEDIAGUARD_FIELD_GROUPS_DESC" default="5,6,7" size="40" required="true"/>
 				<field name="debug_mode" type="list" label="PLG_SYSTEM_MEDIAGUARD_FIELD_DEBUG_LABEL" description="PLG_SYSTEM_MEDIAGUARD_FIELD_DEBUG_DESC" default="0">
