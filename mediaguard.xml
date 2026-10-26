@@ -2,7 +2,7 @@
 <extension type="plugin" group="system" version="4.0" method="upgrade" element="mediaguard">
 	<name>PLG_SYSTEM_MEDIAGUARD</name>
 	<author>Marek Gajdziński, Gemini AI</author>
-	<creationDate>23-10-2026</creationDate>
+	<creationDate>24-10-2026</creationDate>
 	<copyright>(C) 2026 Marek Gajdziński</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<version>1.0.0</version>
