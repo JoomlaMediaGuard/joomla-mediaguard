@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>MediaGuard</name>
+		<description>Intelligent, dynamic protection for media directories in Joomla 5 and 6.</description>
+		<element>mediaguard</element>
+		<type>plugin</type>
+		<folder>system</folder>
+		<client>administrator</client>
+		<version>1.0.2</version>
+		<infourl>https://github.com/JoomlaMediaGuard/joomla-mediaguard</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/JoomlaMediaGuard/joomla-mediaguard/releases/latest/download/mediaguard.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<targetplatform name="joomla" version="5|6"/>
+	</update>
+</updates>

@@ -1,4 +1,13 @@
 <?php
+
+/**
+ * @package     Joomla.Plugin
+ * @subpackage  System.Mediaguard
+ *
+ * @copyright   Copyright (C) 2026 Marek Gajdziński. All rights reserved.
+ * @license     GNU General Public License version 2 or later
+ */
+
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Extension\PluginInterface;
@@ -7,7 +16,7 @@ use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 use Joomla\Event\DispatcherInterface;
-use Joomla\Plugin\System\Mediaguard\Extension\Mediaguard;
+use JoomlaMediaGuard\Plugin\System\Mediaguard\Extension\Mediaguard;
 
 return new class() implements ServiceProviderInterface
 {
@@ -18,14 +27,12 @@ return new class() implements ServiceProviderInterface
 			function (Container $container) {
 				$dispatcher = $container->get(DispatcherInterface::class);
 
-				// Inicjalizujemy wtyczkę jako pełnego subskrybenta zdarzeń
 				$plugin = new Mediaguard(
 					$dispatcher,
 					(array) PluginHelper::getPlugin('system', 'mediaguard')
 				);
 
 				$plugin->setApplication(Factory::getApplication());
-
 				return $plugin;
 			}
 		);

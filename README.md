@@ -41,8 +41,8 @@ mediaguard.zip
 │   └── Extension/
 │       └── Mediaguard.php                       - Core backend plugin filter and REST API logic
 ├── mediaguard.php                               - Root plugin bootstrap entry file
-└── mediaguard.xml                               - Installation extension manifest (J5/J6 Standard)
-
+├── mediaguard.xml                               - Installation extension manifest (J5/J6 Standard)
+└── update.xml                                   - Automated Joomla Update System definition file
 
 ```
 ---

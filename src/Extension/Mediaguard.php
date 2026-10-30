@@ -1,9 +1,14 @@
 <?php
+
 /**
-	* --- MEDIAGUARD SYSTEM EXTENSION FOR JOOMLA 5/6 ---
-	* A fully optimized, RAM-cached Media Manager protection plugin.
-*/
-namespace Joomla\Plugin\System\Mediaguard\Extension;
+ * @package     Joomla.Plugin
+ * @subpackage  System.Mediaguard
+ *
+ * @copyright   Copyright (C) 2026 Marek Gajdziński. All rights reserved.
+ * @license     GNU General Public License version 2 or later
+ */
+
+namespace JoomlaMediaGuard\Plugin\System\Mediaguard\Extension;
 
 defined('_JEXEC') or die;
 

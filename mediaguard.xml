@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" group="system" version="4.0" method="upgrade" element="mediaguard">
-	<name>PLG_SYSTEM_MEDIAGUARD</name>
+<extension type="plugin" group="system" version="4.0" method="upgrade">
+	<name>System - MediaGuard</name>
 	<author>Marek Gajdziński, Gemini AI</author>
-	<creationDate>26-10-2026</creationDate>
+	<authorEmail>joomla.mediaguard@gmail.com</authorEmail>
+	<authorUrl>https://github.com/JoomlaMediaGuard/joomla-mediaguard</authorUrl>
+	<creationDate>30-10-2026</creationDate>
 	<copyright>(C) 2026 Marek Gajdziński</copyright>
 	<license>GNU General Public License version 2 or later</license>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<description>PLG_SYSTEM_MEDIAGUARD_XML_DESCRIPTION</description>
 
-	<namespace path="src" exttype="plugin">Joomla\Plugin\System\Mediaguard</namespace>
+	<namespace path="src">JoomlaMediaGuard\Plugin\System\Mediaguard</namespace>
 
 	<files>
 		<filename plugin="mediaguard">mediaguard.php</filename>
@@ -31,5 +33,8 @@
 			</fieldset>
 		</fields>
 	</config>
+    <updateservers>
+        <server type="extension" priority="1" name="MediaGuard Updates">https://raw.githubusercontent.com/JoomlaMediaGuard/joomla-mediaguard/main/update.xml</server>
+    </updateservers>
 </extension>
 
