@@ -4,10 +4,10 @@
 	<author>Marek Gajdziński, Gemini AI</author>
 	<authorEmail>joomla.mediaguard@gmail.com</authorEmail>
 	<authorUrl>https://github.com/JoomlaMediaGuard/joomla-mediaguard</authorUrl>
-	<creationDate>30-10-2026</creationDate>
+	<creationDate>20-11-2026</creationDate>
 	<copyright>(C) 2026 Marek Gajdziński</copyright>
 	<license>GNU General Public License version 2 or later</license>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<description>PLG_SYSTEM_MEDIAGUARD_XML_DESCRIPTION</description>
 
 	<namespace path="src">JoomlaMediaGuard\Plugin\System\Mediaguard</namespace>
